@@ -30,9 +30,13 @@ class Solution:
         prev = minVal = float('inf')
         InOrderTraversal(root)
         return(minVal)
+    
+############# Time Complexity: O(n) #############
+## 1. Traverse through each node of the BST once ---> O(n)
+## 2. Traverse through the InOrder traversal & find the min of diffrence between consequrive nodes ---> O(n)
 
-
-
+############# Space Complexity: O(1) #############
+## 1. Space for recursing through the tree ---> O(n) | Total recursive calls on stack would be the max depth of the tree. The worst case max-depth would be O(n) because they did not mention that the BST is balanced.  ( This is not an extra space so, space complexity is still O(1))
 
 
 
