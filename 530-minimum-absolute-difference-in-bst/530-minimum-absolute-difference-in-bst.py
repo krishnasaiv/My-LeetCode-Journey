@@ -26,4 +26,11 @@ class Solution:
             minVal = min(minVal, inOrder_BST[i] - inOrder_BST[i-1])
         
         return(minVal)
-        
+
+
+############# Time Complexity: O(n) #############
+## 1. Traverse throug each node once ---> O(n)
+
+############# Space Complexity: O(n) #############
+## 1. Space for recursing through the tree ---> O(n) | Total recursive calls on stack would be the max depth of the tree. The worst case max-depth would be O(n) because they did not mention that the BST is balanced.
+## 2. Space to store the result of InOrder travelsal ---> O(n)
