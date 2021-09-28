@@ -19,4 +19,10 @@ class Solution:
             r1, r2 = r2, maxRobbable2
         
         return max(maxRobbable1, maxRobbable2)
-        
+
+############# Time Complexity: O(n) #############
+## 1. Traverse the array 2 times ---> O(n)
+
+############# Space Complexity: O(1) #############
+## 1. No Extra Space ---> O(1)
+
