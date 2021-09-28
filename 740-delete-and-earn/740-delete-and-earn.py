@@ -1,7 +1,7 @@
 class Solution:
     def deleteAndEarn(self, nums: List[int]) -> int:
         from collections import Counter, defaultdict 
-        d = defaultdict(lambda : 0, dict(Counter(nums)))
+        d = defaultdict(lambda : 0, Counter(nums))
         
         
         
