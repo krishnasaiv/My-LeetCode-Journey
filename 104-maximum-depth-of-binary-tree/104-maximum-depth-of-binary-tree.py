@@ -6,15 +6,15 @@
 #         self.right = right
 
 
-def PreOrderTraverse(root, CurDepth, MaxDepth):
+def Traverse(root, CurDepth, MaxDepth):
     
     if root is None:
         return
     
-    ml = CurDepth if root.left is None else PreOrderTraverse(root.left, CurDepth+1, MaxDepth)
-    mr = CurDepth if root.right is None else PreOrderTraverse(root.right, CurDepth+1, MaxDepth)
+    md = max(CurDepth, CurDepth if root.left is None else Traverse(root.left, CurDepth+1, MaxDepth))
+    md = max(md, CurDepth if root.right is None else Traverse(root.right, CurDepth+1, MaxDepth))
     
-    return(max(ml, mr))
+    return md
 
 
 class Solution:
@@ -23,7 +23,7 @@ class Solution:
         if root is None:
             return 0
         
-        return(PreOrderTraverse(root, 1, 1))
+        return(Traverse(root, 1, 1))
         
         
         
