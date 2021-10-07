@@ -24,7 +24,7 @@ class Solution:
         ################################################
         ################# Space Optimized Iterative (Tabulation)
         ################################################
-        l1, l2 = len(text1), len(text2)
+        l1, l2 = len(text1), len(text2) 
             
         dp_prev = [0 for i in range(l2+1)]
         
@@ -38,7 +38,7 @@ class Solution:
 
             dp_prev = dp_cur
                 
-        return(dp_prev[j])
+        return(dp_cur[-1])
                     
         
         
