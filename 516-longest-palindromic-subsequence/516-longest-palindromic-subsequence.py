@@ -1,5 +1,9 @@
 class Solution:
     def longestPalindromeSubseq(self, s: str) -> int:
+        ##############################################################
+        ###### Longest Common SubSequence with the reversed string
+        ##############################################################
+        
         t = s[::-1]
         
         l1, l2 = len(s), len(t)
