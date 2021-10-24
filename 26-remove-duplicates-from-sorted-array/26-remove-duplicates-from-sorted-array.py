@@ -23,3 +23,14 @@ class Solution:
                 nums[lnth] = nums[i]
         
         return(lnth+1)
+    
+#############     Strategy         #############
+## 2 pointer iteration
+## One iterator points to the position in array & the other to the position of placing the next number
+
+############# Time Complexity: O(n) #############
+## 1. Iterate once ---> O(n)
+
+############# Space Complexity: O(1) #############
+## 1. No extra Space ---> O(1)
+                
