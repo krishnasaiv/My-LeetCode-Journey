@@ -17,7 +17,6 @@ class Solution:
             
             for i in range(9):
                 if board[i][j] != '.' and freq[board[i][j]]:
-                    # print((i,j), freq)
                     return(False)
                 freq[board[i][j]] = True
         
@@ -29,9 +28,7 @@ class Solution:
                 
                 for i in range(r, r+3):
                     for j in range(c, c+3):
-                        # print((r,c), (i,j))
                         if board[i][j] != '.' and freq[board[i][j]]:
-                            # print((r,c), (i,j), freq)
                             return(False)
                             
                         freq[board[i][j]] = True
