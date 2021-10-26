@@ -6,15 +6,16 @@
 #         self.right = right
 
 
-def Traverse(root, CurDepth, MaxDepth):
+# def Traverse(root, CurDepth, MaxDepth):
     
-    if root is None:
-        return
+#     if root is None:
+#         return
     
-    md = max(CurDepth, CurDepth if root.left is None else Traverse(root.left, CurDepth+1, MaxDepth))
-    md = max(md, CurDepth if root.right is None else Traverse(root.right, CurDepth+1, MaxDepth))
+#     md = max(CurDepth, CurDepth if root.left is None else Traverse(root.left, CurDepth+1, MaxDepth))
+#     md = max(md, CurDepth if root.right is None else Traverse(root.right, CurDepth+1, MaxDepth))
     
-    return md
+#     return md
+
 
 
 class Solution:
@@ -23,7 +24,7 @@ class Solution:
         if root is None:
             return 0
         
-        return(Traverse(root, 1, 1))
+        return( 1 + max(self.maxDepth(root.left), self.maxDepth(root.right)) )
         
         
         
