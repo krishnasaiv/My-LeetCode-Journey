@@ -19,12 +19,10 @@ class Solution:
         curLevel = 0
         
         while True:
-            
             q.append(list())
             nextLevel = curLevel+1
             
             for i in range(len(q[curLevel])):
-                
                 if q[curLevel][i].left: q[nextLevel].append(q[curLevel][i].left)
                 if q[curLevel][i].right: q[nextLevel].append(q[curLevel][i].right)
                     
