@@ -14,7 +14,7 @@ class Solution:
         r = self.CheckHeightAndBalanced(root.right)
         lh, rh = l[1]+1, r[1]+1
         
-        return ( abs(lh-rh)<= 1 and l[0] and r[0], max(lh, rh) )
+        return (abs(lh-rh)<= 1 and l[0] and r[0], max(lh, rh))
         
         
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
