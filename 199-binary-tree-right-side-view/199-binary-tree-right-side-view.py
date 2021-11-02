@@ -24,5 +24,14 @@ class Solution:
         maxLevel = [-1]
         
         return( rightView (root, curLevel, maxLevel) )
+
+#################################################
+## 1. Approach 1: Recursive PreOrder Traversal with maxLevel & curLevel  ---> T:O(n) ; S:O(maxDepth) 
+## 2. Approach 2: Level Order traversal ---> T:O(n) ; S:O(maxNodesInaLevel)
+
         
-        
+############# Time Complexity: O(n) #############
+## 1.
+
+############# Space Complexity: O(maxDepth) #############
+## 1.
