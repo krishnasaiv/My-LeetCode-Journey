@@ -4,19 +4,22 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
-    def CheckHeightAndBalanced(self, root: Optional[TreeNode]) -> bool:
-        
+class Solution:        
+    
+    def checkbalancedAndReturnHeight(self, root: Optional[TreeNode]) -> bool:
         if root is None:
-            return(True, -1)
+            return(True, 0)
         
-        l = self.CheckHeightAndBalanced(root.left)
-        r = self.CheckHeightAndBalanced(root.right)
-        lh, rh = l[1]+1, r[1]+1
+        leftIsBalanced, leftHeight = self.checkbalancedAndReturnHeight(root.left)
+        rightIsBalanced, rightHeight = self.checkbalancedAndReturnHeight(root.right)
         
-        return (abs(lh-rh)<= 1 and l[0] and r[0], max(lh, rh))
+        return (abs(leftHeight-rightHeight)<= 1 and leftIsBalanced and rightIsBalanced, 1 + max(leftHeight, rightHeight)) ## Add 1 to increase height of parent by 1
+    
         
-        
+    
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
-        
-        return(self.CheckHeightAndBalanced(root)[0])
+        ### Access the Bollean Flag only
+        return( self.checkbalancedAndReturnHeight(root)[0] )
+       
+    
+    
