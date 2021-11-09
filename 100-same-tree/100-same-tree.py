@@ -66,11 +66,12 @@ class Solution:
        
         return ((pre1 == pre2) and (in1 == in2))
     
-############# Time Complexity: O(n) #############
-## 1. PreOrder ---> O(n) * 2
-## 2. InOrder ---> O(n) * 2
-## 3. Compare lists ---> O(n) * 2
 
-############# Space Complexity: O(n) #############
-## 1. Storage for PreOrder ---> O(n) * 2 ## might be (*4) because of the added nulls. ( if tree is like chain, we will add nullls for each missing sibling)
-## 2. Storage for InOrder ---> O(n) * 2  ## might be (*4) because of the added nulls. ( if tree is like chain, we will add nullls for each missing sibling)
+############# Space Complexity: O(8n) = O(n) #############
+## 1. Storage for PreOrder ---> O(2n) * 2 ## because of the added nulls. ( if tree is like chain, we will add nullls for each missing sibling, so 2n)
+## 2. Storage for InOrder ---> O(2n) * 2  ## because of the added nulls. ( if tree is like chain, we will add nullls for each missing sibling, so 2n)
+
+############# Time Complexity: O(12n) = O(n) #############
+## 1. PreOrder ---> O(2n) * 2
+## 2. InOrder ---> O(2n) * 2
+## 3. Compare lists ---> O(2n) * 2
