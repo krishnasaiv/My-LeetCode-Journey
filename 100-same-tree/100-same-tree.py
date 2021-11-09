@@ -9,12 +9,12 @@ class Solution:
 ################################################################################################
 #### Recursion
 ################################################################################################    
-    # def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-    #     if (not p) and (not q):
-    #         return True
-    #     if (p and not q) or (not p and q) or (p.val != q.val):
-    #         return False
-    #     return (self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right))
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        if (not p) and (not q):
+            return True
+        if (p and not q) or (not p and q) or (p.val != q.val):
+            return False
+        return (self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right))
     
 ############# Time Complexity: O(n) #############
 ## 1. Traverse each node of the tree
@@ -37,34 +37,34 @@ class Solution:
 ### This will only work if all the elements are distinct or 
 ### This will work if we add nulls for leaves with missing sibling leaves ( [1, 1], [1, null, 1])
 
-    def preOrderTraversal(self, root, arr):
-        if not root:
-            arr.append(None)
-            return
-        arr.append(root.val)
-        self.preOrderTraversal(root.left, arr)
-        self.preOrderTraversal(root.right, arr)
+#     def preOrderTraversal(self, root, arr):
+#         if not root:
+#             arr.append(None)
+#             return
+#         arr.append(root.val)
+#         self.preOrderTraversal(root.left, arr)
+#         self.preOrderTraversal(root.right, arr)
         
-    def inOrderTraversal(self, root, arr):
-        if not root:
-            arr.append(None)
-            return
-        self.inOrderTraversal(root.left, arr)
-        arr.append(root.val)
-        self.inOrderTraversal(root.right, arr)
+#     def inOrderTraversal(self, root, arr):
+#         if not root:
+#             arr.append(None)
+#             return
+#         self.inOrderTraversal(root.left, arr)
+#         arr.append(root.val)
+#         self.inOrderTraversal(root.right, arr)
         
         
     
-    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        pre1, pre2, in1, in2 = list(), list(), list(), list()
+#     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+#         pre1, pre2, in1, in2 = list(), list(), list(), list()
         
-        self.preOrderTraversal(p, pre1)
-        self.inOrderTraversal(p, in1)
+#         self.preOrderTraversal(p, pre1)
+#         self.inOrderTraversal(p, in1)
         
-        self.preOrderTraversal(q, pre2)
-        self.inOrderTraversal(q, in2)
+#         self.preOrderTraversal(q, pre2)
+#         self.inOrderTraversal(q, in2)
        
-        return ((pre1 == pre2) and (in1 == in2))
+#         return ((pre1 == pre2) and (in1 == in2))
     
 
 ############# Space Complexity: O(8n) = O(n) #############
