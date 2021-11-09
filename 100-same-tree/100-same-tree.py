@@ -14,4 +14,15 @@ class Solution:
         
         return (self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right))
     
-    
+############# Time Complexity: O(n) #############
+## 1. Traverse each node of the tree
+
+############# Space Complexity: O(n) #############
+## 1. Stack space for recusrsion which is max height of the tree
+
+
+############# Comments #############
+##      Here if the tree is not balanced & like a chain( we will find it in the first step itself). 
+##      So, the more unbalanced the quicker it takes to decide symmetry
+##      We could say the worst case takes place when the tree is balanced
+##      Can we say the time & space complexities are O(log(n))
