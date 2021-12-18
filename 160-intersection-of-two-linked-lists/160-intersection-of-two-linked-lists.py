@@ -35,3 +35,8 @@ class Solution:
             cur1 = cur1.next
             cur2 = cur2.next
         return 
+############# Time Complexity: O(m+n) #############
+## 1. Find lengths of both lists ---> O(m+n)
+## 2. Traverse both lists until intersection found ---> O(max(m, n))
+############# Space Complexity: O(1) #############
+## 1.
