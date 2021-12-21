@@ -25,13 +25,12 @@ class Solution:
     
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         
-        #### To remove nth item from the end, we have to point to the n+1th item from the end
+        #### To remove nth item from the end, we have to point to the n+1 th item from the end. 
+        #### So we move right pointer by n times & iterate until r reaches end ( not r reaches NULL )
         #### 1st node from end is last node, & so on 
         l = r = head
         
-        for i in range(n):       ### move r n+1 times
-            # n -= 1
-            
+        for i in range(n):       ### move r n times
             r = r.next
             if r is None:
                 head = head.next
