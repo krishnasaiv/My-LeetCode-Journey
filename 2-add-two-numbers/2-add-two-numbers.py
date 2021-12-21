@@ -40,6 +40,7 @@ class Solution:
         
         
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        #### Similar to merge method in merge sort
         
         p1 = l1
         p2 = l2
