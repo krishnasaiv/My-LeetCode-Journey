@@ -24,18 +24,20 @@ class Solution:
     
     
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        #### To remove nth item from the end, we have to pint to the n+1th item from the end
         
+        #### To remove nth item from the end, we have to point to the n+1th item from the end
+        #### 1st node from end is last node, & so on 
         l = r = head
         
-        while n >= 0:
+        for i in range(n):       ### move r n+1 times
+            # n -= 1
+            
+            r = r.next
             if r is None:
                 head = head.next
                 return(head)
-            r = r.next
-            n -= 1
         
-        while r:
+        while r.next:
             l = l.next
             r = r.next
         
