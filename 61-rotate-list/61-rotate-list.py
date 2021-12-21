@@ -20,15 +20,18 @@ class Solution:
         
         rotations = k % length
         if rotations > 0:
+            ### Move r by n places
             l = r = head
             for i in range(rotations):
                 r = r.next              #### We don't need to check if r is none here
                                         #### because 1 <= rotations <= length-1
                                         #### So even in edge cases r will not go to none
+            ### Move both l & r until r is at the last element in the linked list
             while r.next:
                 l = l.next
                 r = r.next
             
+            ### break connection, save nxt & restructure this
             nxt = l.next
             l.next = None
             r.next = head
