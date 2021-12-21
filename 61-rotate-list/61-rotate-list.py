@@ -18,8 +18,6 @@ class Solution:
             length +=1
             cur = cur.next
         
-        
-        
         rotations = k % length
         if rotations > 0:
             l = r = head
