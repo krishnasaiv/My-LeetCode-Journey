@@ -22,8 +22,9 @@ class Solution:
         if rotations > 0:
             l = r = head
             for i in range(rotations):
-                r = r.next
-            
+                r = r.next              #### We don't need to check if r is none here
+                                        #### because 1 <= rotations <= length-1
+                                        #### So even in edge cases r will not go to none
             while r.next:
                 l = l.next
                 r = r.next
