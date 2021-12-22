@@ -29,7 +29,7 @@ class Solution:
             prev = cur
             cur = nxt
         
-        #### Reconnect the original tail to the first half of linkedlist
+        #### Reconnect the original tail to the first half of linkedlist        ## THIS STEP IS NOT NECESSARY
         l.next = prev
         
         #### Move l to start & r to prev( start of reversed secondhalf ) & compare each node while iterating
@@ -44,4 +44,11 @@ class Solution:
             r = r.next
 
         return True
-        
+
+############# Time Complexity: O(n) #############
+## 1. Find the Middle Node ---> O(n)
+## 3. Reverse second Half ---> O(n)
+## 4. Compare corresponding elements of first half & reversed second half ---> O(n)
+
+############# Space Complexity: O(1) #############
+## 1. No extra space
