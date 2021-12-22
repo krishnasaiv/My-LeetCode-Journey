@@ -19,7 +19,7 @@ class Solution:
             r = r.next.next
             
         middle = l.next
-        l.next = None
+        l.next = None       # Remove the link between first half & the second half
         
         #### Reverse list from Middle
         prev = None
@@ -39,13 +39,13 @@ class Solution:
         cur1, cur2 = head, middle
         
         while cur2:
-            nxt1 = cur1.next
+            nxt1 = cur1.next    # save the next pointers in each list
             nxt2 = cur2.next
             
-            cur1.next = cur2
+            cur1.next = cur2    # Move first element from list2 next to the current node in list1
             cur2.next = nxt1
             
-            cur1 = nxt1
+            cur1 = nxt1         # Update Current Node locations in both lists
             cur2 = nxt2
         
         return head
