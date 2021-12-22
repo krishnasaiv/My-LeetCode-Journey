@@ -21,23 +21,22 @@ class Solution:
         middle = l.next
         l.next = None       # Remove the link between first half & the second half
         
+        
         #### Reverse list from Middle
         prev = None
         cur = middle
-        
         while cur:
-            nxt = cur.next
+            nxt = cur.next      # save the location of the next pointer ( the rest of the list ) so that it is not lost
             
-            cur.next = prev
+            cur.next = prev     # move the next pointer in current node to previous 
             
-            prev = cur
+            prev = cur          # update the prev & cur
             cur = nxt
         middle = prev
         
         
         #### Merge Head & Middle
         cur1, cur2 = head, middle
-        
         while cur2:
             nxt1 = cur1.next    # save the next pointers in each list
             nxt2 = cur2.next
@@ -47,7 +46,7 @@ class Solution:
             
             cur1 = nxt1         # Update Current Node locations in both lists
             cur2 = nxt2
-        
+
         return head
         
         
