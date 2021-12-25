@@ -20,7 +20,6 @@ class Solution:
         #code here
         curr_node.data = curr_node.next.data
         curr_node.next = curr_node.next.next
-        return curr_node
 
 #{ 
 #  Driver Code Starts
