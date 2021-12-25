@@ -9,7 +9,6 @@ class Solution:
         if len(s) % 2 == 1:
             return(False)
         
-        
         parentheses = {'{':'}','[':']','(':')', }
         q = deque()
         for char in s:
