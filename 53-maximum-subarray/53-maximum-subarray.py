@@ -4,28 +4,10 @@ class Solution:
             return(nums[0])
         
         
-        maxSubarraySum = runningSubarraySum = float('-inf')
-        for i in range(len(nums)):
+        maxSubarraySum = runningSubarraySum = nums[0]
+        for num in nums[1:]:
             
-            runningSubarraySum = max(runningSubarraySum+nums[i], nums[i])
+            runningSubarraySum = max(runningSubarraySum + num, num)
             maxSubarraySum = max(maxSubarraySum, runningSubarraySum)
-            # print(nums[i], runningSubarraySum, maxSubarraySum)
-        
+            
         return(maxSubarraySum)
-    
-#         maxSubarraySum = runningSubarraySum = float('-inf')
-#         for i in range(len(nums)):
-            
-#             if nums[i] < 0:
-#                 maxSubarraySum = max(maxSubarraySum, runningSubarraySum)
-#                 runningSubarraySum = nums[i]
-#             else:
-#                 if runningSubarraySum < 0:
-#                     maxSubarraySum = max(maxSubarraySum, runningSubarraySum)
-#                     runningSubarraySum = nums[i]
-#                 else:
-#                     runningSubarraySum += nums[i]
-        
-#         return(maxSubarraySum)
-            
-        
