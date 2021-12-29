@@ -18,4 +18,8 @@ class Solution:
         return l-1      ## square of everything before l is always lesser than the target
                         ## square of everything after r is always greater than the target
                 
-        
+############# Time Complexity: O(n) #############
+## 1. Search for the number --> O(n)
+
+############# Space Complexity: O(1) #############
+## 1. No extra space
