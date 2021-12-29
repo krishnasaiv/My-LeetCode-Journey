@@ -38,4 +38,9 @@ class Solution:
         return [start, end]        
         
         
-        
+############# Time Complexity: O(n) #############		
+## 1. Search for the starting position of the given target  ---> O(n)
+## 2. Search for the ending position of the given target ---> O(n)		
+
+############# Space Complexity: O(1) #############		
+## 1. No extra space
