@@ -3,26 +3,26 @@
 class Solution:
     
     def BinSearch(self, A, l, r, key):
-        # if l > r:
-        #     return -1
-        # m = (l+r) // 2
-        # if A[m] == key:
-        #     return m
-        # elif key < A[m]:
-        #     return self.BinSearch(A, l, m-1, key)
-        # else:
-        #     return self.BinSearch(A, l+1, m, key)
-            
         if l > r:
             return -1
         m = (l+r) // 2
         if A[m] == key:
             return m
-        elif A[m] > key:
-            r = m-1
+        elif key < A[m]:
+            return self.BinSearch(A, l, m-1, key)
         else:
-            l = m+1
-        return self.BinSearch(A, l, r, key)
+            return self.BinSearch(A, m+1, r, key)
+            
+        # if l > r:
+        #     return -1
+        # m = (l+r) // 2
+        # if A[m] == key:
+        #     return m
+        # elif A[m] > key:
+        #     r = m-1
+        # else:
+        #     l = m+1
+        # return self.BinSearch(A, l, r, key)
         
         
     def search(self, A : list, l : int, h : int, key : int):
