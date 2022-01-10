@@ -21,21 +21,8 @@ class Solution:
         
         #### Find the offset of the rotated array
         offset = 0
+        # Find offset only if it is rotated
         if nums[0] > nums[-1] :
-        
-            # l, r = 0, len(nums)-2
-            # m = (l+r) // 2
-            # print(l, m, r)
-            # while l <= r:
-            #     if nums[m] > nums[m+1]:
-            #         break
-            #     else:
-            #         if nums[m] < nums[r+1]:
-            #             r = m-1
-            #         elif nums[m] > nums[l]:
-            #             l = m+1
-            #     m = (l+r) // 2
-            # offset = m
             
             s, e = 0, len(nums)-1
             while s <= e:
@@ -44,19 +31,25 @@ class Solution:
                 if nums[m] == target:
                     return m
                 else:
-                    if nums[m] <= nums[-1] :
+                    if nums[m] <= nums[-1] :  # = is important & nums[-1] is important
                         e = m-1
-                    elif nums[m] >= nums[0]:
+                    elif nums[m] >= nums[0] : # = is important & nums[0] is important
                         s = m+1
                 # print(s, e, m)
             offset = e
             
-        print(offset)
+        # print(offset)
         if nums[0] <= target <= nums[offset] :
             return self.BinSearch(nums, 0, offset , target)
         else:
             return self.BinSearch(nums, offset+1, len(nums)-1, target)
         
-            
+############# Time Complexity: O(log(n)) #############
+## 1. Bin Search in entire array for offset ---> O(log(n))
+## 2. Bin Search in 0:offset --->O(log(offset))
+## 3. Bin Search in offset:n-1 ---> O(log(n-offset))
+
+############# Space Complexity: O(1) #############
+## 1. No extra space
         
         
