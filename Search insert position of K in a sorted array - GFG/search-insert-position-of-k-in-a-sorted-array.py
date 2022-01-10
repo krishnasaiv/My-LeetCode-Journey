@@ -21,7 +21,9 @@ class Solution:
             else:
                 l = m+1
         
-        return l
+        return l   
+        #### Everything before l is always strictly less than target
+        #### Everything after r is always strictly greter than target
 
 #{ 
 #  Driver Code Starts
