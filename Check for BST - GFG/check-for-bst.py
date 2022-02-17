@@ -28,7 +28,6 @@ class Solution:
         self.isBSTHelper(root.right, root.data+1, maxVal) 
     
     def isBST(self, root):
-        #code here
         return self.isBSTHelper(root, float("-inf"), float("inf"))#[0]
         
         
