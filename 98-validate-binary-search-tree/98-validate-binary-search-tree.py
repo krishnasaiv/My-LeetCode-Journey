@@ -15,7 +15,13 @@ class Solution:
         self.isBST(root.right, root.val, maxVal)
     
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        
         return self.isBST(root, float('-inf'), float('inf'))
+    
+    
+############# Time Complexity: O(n) #############			
+## 1. Traverse each node ---> O(n)
+			
+############# Space Complexity: O(h) #############			
+## 1. Recursive stack ---> O(h = logn)
         
         
