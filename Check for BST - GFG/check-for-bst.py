@@ -6,22 +6,30 @@ class Solution:
     #Function to check whether a Binary Tree is BST or not.
     
     
-    def isBSTHelper(self, root):
-        if root is None:
-            return (True, float("inf"), float("-inf"))
+    # def isBSTHelper(self, root):
+    #     if root is None:
+    #         return (True, float("inf"), float("-inf"))
             
-        L_isBST, L_min, L_max = self.isBSTHelper(root.left)
-        R_isBST, R_min, R_max = self.isBSTHelper(root.right)
+    #     L_isBST, L_min, L_max = self.isBSTHelper(root.left)
+    #     R_isBST, R_min, R_max = self.isBSTHelper(root.right)
         
-        return [ 
-            L_isBST and R_isBST and (L_max < root.data < R_min), 
-            min(L_min, root.data, R_min), 
-            max(L_max, root.data, R_max)
-        ]
+    #     return [ 
+    #         L_isBST and R_isBST and (L_max < root.data < R_min), 
+    #         min(L_min, root.data, R_min), 
+    #         max(L_max, root.data, R_max)
+    #     ]
+    
+    def isBSTHelper(self, root, minVal, maxVal):
+        if root is None:
+            return True
+            
+        return (minVal <= root.data <= maxVal) and \
+        self.isBSTHelper(root.left, minVal, root.data -1) and \
+        self.isBSTHelper(root.right, root.data+1, maxVal) 
     
     def isBST(self, root):
         #code here
-        return self.isBSTHelper(root)[0]
+        return self.isBSTHelper(root, float("-inf"), float("inf"))#[0]
         
         
     
