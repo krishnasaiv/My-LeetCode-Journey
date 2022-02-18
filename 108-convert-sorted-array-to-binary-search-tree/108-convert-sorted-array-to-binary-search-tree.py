@@ -19,5 +19,10 @@ class Solution:
     
     
     def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
-       
         return self.sortedArrayToBSTHelper(nums, 0, len(nums)-1)
+    
+############# Time Complexity: O(n) #############			
+## 1.Traverse each element of a list ---> O(n)
+			
+############# Space Complexity: O(h = logn) #############			
+## 1. Recursion stack ---> O(h) ( becasuse it is balanced )
