@@ -22,11 +22,13 @@ class Solution:
                 pointer = pointer.right
             else:
                 break
-        ###
+            
+        #### Case1: Target node has a right sub tree
         if pointer.right:    
             successor = pointer.right
             while successor.left is not None:
                 successor = successor.left
+        #### Case2: Target node does not have a right sub tree
         else:
             successor = None
             pointer = root
